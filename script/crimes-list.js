@@ -19,25 +19,25 @@ function addCrimesToList(crimeName) {
 
 
   // sort crimes by distance
-  crimes.sort((left, right) => ((left.lat - lat)**2 + (left.lng - lng)**2) - ((right.lat - lat)**2 + (right.lng - lng)**2));
+  crimes.sort((left, right) => (calculateDistance(left.lat, left.lng, lat, lng) - calculateDistance(right.lat, right.lng, lat, lng)));
 
 
   // populate crime list
   let html = '';
   for (const crime of crimes) {
     const name = crime.text_general_code;
-    const time = crime.dispatch_date + crime.dispatch_time;
+    const time = crime.dispatch_date + " " + crime.dispatch_time;
     const location = crime.location_block;
     const distance = calculateDistance(crime.lat, crime.lng, lat, lng).toFixed(2);
 
     const crimeListItemHTML = `
-        <li><div class="crime-info">
+        <li><div class="each-crime"><div class="crime-info">
               <div class="crime-name">${name}</div>
               <div class="crime-location">${location}</div>
               <div class="crime-time">${time}</div>
             </div>
-            <div class="crime-distance">${distance}mile</div>
-        </li>`;
+            <div class="crime-distance">${distance}mi</div>
+        </div></li>`;
     html += crimeListItemHTML;
   }
   crimeList.innerHTML = html;
