@@ -74,7 +74,7 @@ function addSearchLocation(lat, lng) {
   iconLayer.clearLayers();
 
   const icon = L.icon({
-    iconUrl: '../img/add_location.png',
+    iconUrl: './img/add_location.png',
     //shadowUrl: 'leaf-shadow.png',
 
     iconSize:     [48, 48], // size of the icon
