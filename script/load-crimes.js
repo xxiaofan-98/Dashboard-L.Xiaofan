@@ -1,4 +1,4 @@
-const crimesResp = await fetch('../data/crimes.json');
+const crimesResp = await fetch('./data/crimes.json');
 // make HTTP request at the address
 // fetch function submit a request, from the request generate a response
 
