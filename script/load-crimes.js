@@ -5,6 +5,8 @@ const crimesResp = await fetch('./data/crimes.json');
 const crimes = await crimesResp.json();
 // json function get the data contained in the response
 
+
+// categorize crimes by types
 const crimeObj = {'Aggravated Assault': [],
                 'Burglary': [],
                 'Drug Violations': [],
@@ -16,16 +18,16 @@ const crimeObj = {'Aggravated Assault': [],
                 'Sex Offenses': [],
                 'Thefts': [],
                 'Vandalism': [],
-                'Weapon Violations': [], 
-                'all': crimes
+                'Weapon Violations': []
                 };
+
 
 for (const crime of crimes) {
     const crimeName = crime.text_general_code;
     crimeObj[crimeName].push(crime);
-}
+};
 
 
 export {
     crimeObj
-}
+};

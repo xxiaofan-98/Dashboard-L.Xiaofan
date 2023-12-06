@@ -7,12 +7,7 @@ function initFilters() {
                     'Fraud', 'Other Assaults', 'Other Crimes', 'Rape', 'Robbery', 'Sex Offenses', 
                     'Thefts', 'Vandalism', 'Weapon Violations'];
     
-    let html = `
-        <div class='radio'>
-            <input type="radio" name="radiogroup" class="filter-input" id="input-all" value="all" checked>
-            <label for="input-all">All</label>
-        </div>`;
-
+    let html = ``;
     for (const name of names) {
         html += `
         <div class='radio'>
@@ -20,10 +15,10 @@ function initFilters() {
             <label for="input-${name}">${name}</label>
         </div>`
     }
-
     radioGroup.innerHTML = html;
 
     const filters = radioGroup.querySelectorAll('input');
+    filters[0].checked = true;
     for (const filter of filters) {
         filter.addEventListener("click", event => {
             addCrimesToList(filter.value);

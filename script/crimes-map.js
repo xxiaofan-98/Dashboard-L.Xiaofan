@@ -12,9 +12,10 @@ function initializeMap(crimeName) {
   dataLayer = L.layerGroup().addTo(map);
   iconLayer = L.layerGroup().addTo(map);
   addCrimesToMap(crimeName);
+
 } // create a new map and initialize the view for the map, return it
 
-
+// add obj data to the map as markers
 function addCrimesToMap(crimeName) {
   dataLayer.clearLayers();
 
@@ -34,9 +35,7 @@ function addCrimesToMap(crimeName) {
   }
 }
 
-// rgb(84,193,225)
-
-
+// set color for each type of crime
 function getColor(crimeName) {
   switch(crimeName) {
     case 'Aggravated Assault':
@@ -69,7 +68,7 @@ function getColor(crimeName) {
 }
 
 
-
+// add searched location to map as an icon
 function addSearchLocation(lat, lng) {
   iconLayer.clearLayers();
 
@@ -90,7 +89,7 @@ function addSearchLocation(lat, lng) {
 
   iconLayer.addLayer(marker);
 
-  map.setView([lat, lng], 15);
+  map.setView([lat, lng], 16, 2000);
 }
 
 

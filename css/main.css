@@ -1,5 +1,5 @@
 /* below are for global settings */
-html{
+html {
     background-color: #060606;
     font-family: IBM Plex Sans;
 }
@@ -14,16 +14,18 @@ body {
     box-sizing: border-box;
 }
 
-h1{
+h1 {
     font-size: 16px;
     font-weight: 400;
     margin: 0;
     padding: 0;
 }
 
-p{
+
+
+p {
     font-size: 14px;
-    font-weight:lighter;
+    font-weight: lighter;
     color: grey;
     margin: 0;
     padding: 0;
@@ -31,44 +33,42 @@ p{
 
 
 /* below are for header */
-header{
+header {
     height: 68px;
-    display: flex;  
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 12px;
     background-color: #161616;
-    color:#e5e5e5;
+    color: #e5e5e5;
     border: 1px solid #2f2f2f;
     font-weight: 300;
     box-sizing: border-box;
 }
 
-.title{
+.title {
     font-size: 28px;
     font-weight: 400;
     width: 400px;
 }
 
-.empty {
-    width: 300px;
-}
+.right {}
 
 .address-section {
     flex: 1;
     margin: 0;
     padding: 0;
+    width: 600px;
 }
 
 .address-entry {
-    width: 100%;
-    max-width: 600px;
+    width: 600px;
     outline: 1px solid #2f2f2f;
     border: 0;
     height: 42px;
     background-color: #262626;
-    color:#e5e5e5;
+    color: #e5e5e5;
     border-radius: 0;
     padding: 0;
     margin: 0;
@@ -81,9 +81,9 @@ header{
     height: 42px;
 }
 
-.address-choices {
+.address-choices, .modal-choices {
     list-style: none;
-    background-color: #262626;
+    background-color: #363636;
     padding: 0;
     margin-top: 2px;
     width: 600px;
@@ -91,9 +91,9 @@ header{
     z-index: 5000;
 }
 
-.address-choices li {
+.address-choices li, .modal-choices li {
     height: 48px;
-    flex:1;
+    flex: 1;
     margin-top: 8px;
     margin-bottom: 8px;
     padding-left: 8px;
@@ -107,7 +107,7 @@ header{
     font-weight: 200;
 }
 
-.address-choices li:hover {
+.address-choices li:hover, .modal-choices li:hover {
     background-color: #0052ce;
     cursor: pointer;
 }
@@ -119,7 +119,7 @@ main {
     flex: 1;
     display: flex;
     flex-direction: row;
-    color:#e5e5e5;
+    color: #e5e5e5;
     padding: 0;
     margin: 0;
     gap: 12px;
@@ -127,7 +127,7 @@ main {
     overflow: auto;
 }
 
-#map{
+#map {
     flex: 1;
     margin-left: 12px;
     border: 1px solid #2f2f2f;
@@ -136,7 +136,7 @@ main {
     background-color: #161616;
 }
 
-.left{
+.left {
     display: grid;
     grid-template-columns: 250px 350px;
     width: 600px;
@@ -179,7 +179,7 @@ main {
     margin-bottom: 8px;
 }
 
-.radio label{
+.radio label {
     font-size: 14px;
     font-weight: 300;
     margin: 0;
@@ -187,17 +187,18 @@ main {
 }
 
 input[type=radio] {
-    --s: 1em;     /* control the size */
-    --c: #0052ce; /* the active color */
-    
+    --s: 1em;
+    /* control the size */
+    --c: #0052ce;
+    /* the active color */
+
     height: var(--s);
     aspect-ratio: 1;
     border: 1.5px solid #939393;
     padding: calc(var(--s)/8);
     margin-right: 8px;
-    background: 
-       radial-gradient(farthest-side,var(--c) 94%,#0000) 
-       50%/0 0 no-repeat content-box;
+    background:
+        radial-gradient(farthest-side, var(--c) 94%, #0000) 50%/0 0 no-repeat content-box;
     border-radius: 50%;
     outline-offset: calc(var(--s)/10);
     -webkit-appearance: none;
@@ -206,11 +207,12 @@ input[type=radio] {
     cursor: pointer;
     font-size: inherit;
     transition: .3s;
-  }
-  input[type=radio]:checked {
+}
+
+input[type=radio]:checked {
     border-color: var(--c);
     background-size: 100% 100%;
-  }
+}
 
 
 .left-list {
@@ -227,7 +229,7 @@ input[type=radio] {
     margin: 0;
 }
 
-.crime-list li{
+.crime-list li {
     height: 84px;
     padding: 12px;
     border-bottom: 1px solid #2f2f2f;
@@ -243,7 +245,7 @@ input[type=radio] {
     align-items: center;
 }
 
-.crime-name{
+.crime-name {
     font-weight: bold;
 }
 
@@ -261,3 +263,130 @@ input[type=radio] {
     font-size: 14px;
 }
 
+/* The Modal (background) */
+#report-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+#modal-content {
+    background-color: #262626;
+    color: white;
+    border: 1.2px solid #2f2f2f;
+    width: 640px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.modal-title {
+    font-family: IBM Plex Sans;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-input-title, .modal-input-title-2 {
+    font-size: 14px;
+    font-weight: lighter;
+    color: grey;
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.modal-input-title-2 {
+    margin-top: 16px;
+}
+
+#modal-body {
+    padding: 20px;
+}
+
+#modal-entry{
+    width: 600px;
+    outline: 2px solid #2f2f2f;
+    border: 0;
+    height: 42px;
+    background-color: #262626;
+    color: #e5e5e5;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    text-indent: 8px;
+}
+
+#modal-entry:focus {
+    outline: 2px solid #0052ce;
+    border: 0;
+    height: 42px;
+}
+
+#modal-footer {
+    padding: 0 20px 20px 20px;
+}
+
+
+/* The Close Button */
+#close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+#close:hover,
+#close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#report-btn {
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    background-color: #262626;
+    padding: 12px;
+    border: 1px solid #2f2f2f;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#modal-submit-btn {
+    color: white;
+    font-size: 14px;
+    font-weight: lighter;
+    background-color: #0052ce;
+    padding: 12px;
+    border: 1px solid #2f2f2f;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}

@@ -17,13 +17,13 @@ function initializeAddressEntry() {
     let html = '';
     for (const feature of data.features) {
       const placeName = feature.place_name;
-      html += `<li data-lat="${feature.center[1]}" data-lon="${feature.center[0]}">${placeName}</li>`;
+      html += `<li class="search-li" data-lat="${feature.center[1]}" data-lon="${feature.center[0]}">${placeName}</li>`;
     }
 
     addressChoiceList.innerHTML = html;
     
 
-    const choices = addressChoiceList.querySelectorAll('li');
+    const choices = addressChoiceList.querySelectorAll('.search-li');
     for (const choice of choices) {
       choice.addEventListener("click", event => {
         addressEntry.value = choice.innerHTML;

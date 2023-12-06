@@ -1,17 +1,19 @@
 import { crimeObj } from './load-crimes.js';
 
+
+// set the default location
 let lat = 39.952111;
 let lng = -75.192297;
 
 
 function initializeList(crimeName) {
   addCrimesToList(crimeName);
-}
+};
 
 function updateLocation(newLat, newLng) {
   lat = newLat;
   lng = newLng;
-}
+};
 
 function addCrimesToList(crimeName) {
   const crimeList = document.querySelector('.crime-list');
@@ -44,6 +46,7 @@ function addCrimesToList(crimeName) {
 
 }
 
+// calculate the distance between two points on map
 function calculateDistance(lat1, lon1, lat2, lon2) {
   const earthRadiusMiles = 3958.8; // Radius of the Earth in miles
 

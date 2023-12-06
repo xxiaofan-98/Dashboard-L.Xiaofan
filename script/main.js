@@ -1,30 +1,28 @@
-import { initializeMap } from './crimes-map.js';
+import { initializeMap, addSearchLocation } from './crimes-map.js';
 import { initializeList } from './crimes-list.js';
 import { initializeAddressEntry } from './address-entry.js';
 import { initFilters } from './filters.js';
+import { initializeModal } from './add-a-crime.js';
 
 initFilters();
-initializeMap("all");
-initializeList("all");
+initializeMap("Aggravated Assault");
+initializeList("Aggravated Assault");
 initializeAddressEntry();
+initializeModal();
 
-const options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
+// const options = {
+//     enableHighAccuracy: true,
+//     timeout: 5000,
+//     maximumAge: 0,
+// };
   
-  function success(pos) {
-    const crd = pos.coords;
+// function success(pos) {
+//     const crd = pos.coords;
+//     addSearchLocation(crd.latitude, crd.longitude);
+// };
+
+// function error(err) {
+//     console.warn(`ERROR(${err.code}): ${err.message}`);
+// };
   
-    console.log("Your current position is:");
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
-  }
-  
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  }
-  
-  navigator.geolocation.getCurrentPosition(success, error, options);
+// navigator.geolocation.getCurrentPosition(success, error, options);

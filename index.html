@@ -26,8 +26,81 @@
         <input type="text" name="address-entry" placeholder=" Enter your address" id="address-entry" class="address-entry">
         <ol id="address-choices" class="address-choices"></ol>
       </div>
-      <div class="empty"></div>
+      <div class="right"><button id="report-btn">Report a Crime</button></div>
     </header>
+
+    <!-- The Pop Up Modal -->
+    <div id="report-modal">
+      <!-- Modal content -->
+      <div id="modal-content">
+        <div id="modal-header">
+          <div class="modal-title">Report a Crime</div>
+          <span id="close">&times;</span>
+        </div>
+        <div id="modal-body">
+          <div class="modal-input-title">Input Your Location</div>
+          <div class="modal-section">
+            <input type="text" name="address-entry" placeholder=" Enter the crime location here" id="modal-entry" class="modal-entry">
+            <ol id="modal-choices" class="modal-choices"></ol>
+          </div>
+          <div class="modal-input-title-2">Input Your Location</div>
+          <form class="modal-radiogroup">
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Aggravated Assault" value="Aggravated Assault">
+                <label for="modal-Aggravated Assault">Aggravated Assault</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Burglary" value="Burglary">
+                <label for="modal-Burglary">Burglary</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Drug Violations" value="Drug Violations">
+                <label for="modal-Drug Violations">Drug Violations</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Fraud" value="Fraud">
+                <label for="modal-Fraud">Fraud</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Other Assaults" value="Other Assaults">
+                <label for="modal-Other Assaults">Other Assaults</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Other Crimes" value="Other Crimes">
+                <label for="modal-Other Crimes">Other Crimes</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Rape" value="Rape">
+                <label for="modal-Rape">Rape</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Robbery" value="Robbery">
+                <label for="modal-Robbery">Robbery</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Sex Offenses" value="Sex Offenses">
+                <label for="modal-Sex Offenses">Sex Offenses</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Thefts" value="Thefts">
+                <label for="modal-Thefts">Thefts</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Vandalism" value="Vandalism">
+                <label for="modal-Vandalism">Vandalism</label>
+            </div>
+            <div class="radio">
+                <input type="radio" name="radiogroup" class="modal-input" id="modal-Weapon Violations" value="Weapon Violations">
+                <label for="modal-Weapon Violations">Weapon Violations</label>
+            </div>
+          </form>
+
+        </div>
+        <div id="modal-footer">
+          <button id="modal-submit-btn">Submit</button>
+        </div>
+      </div>
+    </div>
 
     <main>
       <div class="left">
